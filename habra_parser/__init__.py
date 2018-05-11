@@ -10,7 +10,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-p', '--pages', type=int, nargs='?', default=10,
                         help='Количество страниц для пагинации')
-    parser.add_argument('-s', '--size_of_top', type=int, nargs='?', default=5,
+    parser.add_argument('-s', '--size_of_top', type=int, nargs='?', default=3,
                         help='Рармер топа популярных слов')
     parser.add_argument('-t', '--target', type=str, nargs='?', default='ALL',
                         help='Цель парсинга. ALL - все посты, BEST - лучшие за год')
@@ -26,4 +26,4 @@ if __name__ == '__main__':
         pages_url = 'https://habr.com/all/page{}'
 
     if pages_url:
-        parse_habr(pages_url, top_size)
+        parse_habr(pages_url, top_size, pages)
